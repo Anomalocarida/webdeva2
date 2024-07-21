@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A2 sample</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <div id="overlay"></div>
+    <header>
+        <div class="imgwrapper">
+            <img id="titleimg" src="images/Rain.png" alt="title">
+        </div>
+    </header>
+
+    <div id="buttoncontainer">
+        <nav>
+            <!--menu systtm-->
+            <ul class="btnTbl">
+                <li><button class="menubutton" id="page1btn">Rain</button></li>
+                <li><button class="menubutton" id="page2btn">Types</button></li>
+                <li><button class="menubutton" id="page3btn">Risks</button></li>
+            </ul>
+            <button id="pagesbtn"> Pages ⮟ </button>
+        </nav>
+        <h1 class="topic">Compendium of Rain</h1>
+        <h1 class="topic">Types of Rain</h1>
+        <h1 class="topic">Risks of Rain</h1>
+    </div>
+    
+    <div id="pagecontainer">
+        <div class="page" id="page1">
+
+            <br>
+            <div class="text">
+                <h3>Description</h3>
+                <p>
+                    Rain is water droplets that have condensed from atmospheric water vapor and then fall under gravity. It is also a major component of the water cycle and is responsible for depositing most of the fresh water on the Earth.
+                </p>
+                <br>
+                <br>
+            </div>
+
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Coalescence</h3>
+                    <p>
+                        Coalescence occurs when water droplets fuse to create larger water droplets. Air resistance typically causes the water droplets in a cloud to remain stationary. When air turbulence occurs, water droplets collide, producing larger droplets.<br>
+                        As these larger water droplets descend, coalescence continues, so that drops become heavy enough to overcome air resistance and fall as rain.
+                    </p>
+                    <br>
+                    <br>
+                </div>
+                <div class="imgwrapper">
+                    <img class="contentimg" id="coalescenceimg" src="images/coel.png" alt="coalescence">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Shape</h3>
+                    <p>Raindrops are never tear shaped. Smaller raindrops are almost spherical while larger raindrops become flattened at the bottom due to air resistance. Large raindrops have a large amount of air resistance, and begin to become unstable. When raindrops get large enough, they split into smaller raindrops due to air resistance</p>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="imgwrapper">
+                    <img class="contentimg" id="raindropsplit" src="images/raindropsplit.png" alt="raindrop">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="text">
+                <h1>The Rain Simulation</h1>
+                <h3>Click on the box to create water vapor particles!</h3>
+                <br>
+            </div>
+            <br>
+            <br>
+            <div class="raingame">
+
+                <div class="displayholder">
+                    <div class="display">
+                        <div class="raindrop"></div>
+                    </div>
+                </div>
+                <div class="buttonholder">
+                    <button class="playraingame">Play</button>
+                </div>
+                <div class="buttonholder">
+                    <button class="resetraingame">Reset</button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- SOURCES -->
+            <div class="text">
+                <h3>Sources</h3>
+                <p>
+                    <br>
+                    <a href="https://en.wikipedia.org/wiki/Rain" target="_blank">https://en.wikipedia.org/wiki/Rain</a>
+                    <br>
+                    <br>
+                    <a href="https://kbkb-wx.blogspot.com/2014/11/rain-droplet-growth-collision.html" target="_blank">https://kbkb-wx.blogspot.com/2014/11/rain-droplet-growth-collision.html</a>
+                </p>
+                <br>
+                <br>
+            </div>
+
+
+        </div>
+        <div class="page" id="page2">
+            <br>
+            <div class="text">
+                <h3>Description</h3>
+                <p>
+                    Rainfall can be classified into three different types, Convectional, Orographic or Frontal rainfall, depending on how it was generated.
+                </p>
+                <br>
+                <br>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Convectional Rain</h3>
+                    <p>
+                        Convectional rainfall occurs when water on the earth's surface is heated up by the sun, causing water vapour to form. As the land heats up, warm air rises. As the air rises, it cools and the water vapour condenses, forming
+                        clouds. If this process continues, rainfall occurs. Convectional rainfall is most common in tropical areas, such as areas near the equator.
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="imgwrapper">
+                    <img class="contentimg" id="convectionalrain" src="images/convectional.png" alt="convectional rain">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Orographic Rain</h3>
+                    <p>
+                        Orographic rainfall is formed when air passes over a mountain due to winds. As the air rises, it cools and the water vapour condenses, forming rainclouds and rain. The side of the mountain where the air rises from recieves more rainfall
+                        than the downwind slope. This type of rainfall is most common in coastal areas with lots of high land.
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="imgwrapper">
+                    <img class="contentimg" id="orographicrain" src="images/orographic.png" alt="orographic rain">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Frontal Rain</h3>
+                    <p>
+                        Frontal rain is formed when masses of air with different densities meet. The less dense, warmer air rises over the more dense, cold air. This causes the warmer air to cool and the water vapour to condense, creating clouds 
+                        and rain.
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="imgwrapper">
+                    <img class="contentimg" id="frontalrain" src="images/frontal.png" alt="frontal rain">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- SOURCES -->
+            <div class="text">
+                <h3>Sources</h3>
+                <p>
+                    <br>
+                    <a href="https://www.internetgeography.net/topics/what-is-convectional-rainfall/" target="_blank">https://www.internetgeography.net/topics/what-is-convectional-rainfall/</a>
+                    <br>
+                    <br>
+                    <a href="https://www.linkedin.com/pulse/can-you-explain-rain-should-read-article-bareways" target="_blank">https://www.linkedin.com/pulse/can-you-explain-rain-should-read-article-bareways</a>
+                </p>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="page" id="page3">
+
+            <br>
+            <div class="text">
+                <h3>Description</h3>
+                <p>
+                    There are several ways in which rainfall can cause harm to us or our infrastructure.
+                </p>
+                <br>
+                <br>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Acid Rain</h3>
+                    <p>
+                        Acid rain is formed when rain mixes with acidic gasses produced by buildings such as factories and refineries. Acid rain can cause harm to wildlife and people if exposed for too long, as well as increasing the rate in which
+                        metals are corroded and stone is eroded.
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="imgwrapper">
+                    <img class="contentimg" id="acidrain" src="images/acidrain.png" alt="acid rain">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="textimagepair">
+                <div class="text">
+                    <h3>Flood</h3>
+                    <p>
+                        Heavy rain can create flash floods, causes large amounts of damage on people's properties. It can also disrupt businesses as people will not be able to travel around easily in the event of a flood.
+                    </p>
+                    <br>
+                    <br>
+                </div>
+
+
+                <div class="imgwrapper">
+                    <img class="contentimg" id="flood" src="images/flood.png" alt="flood">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="text">
+                <h1>The Rain Simulation 2</h1>
+                <h3>Click on the box to create water vapor particles!</h3>
+                <br>
+            </div>
+            <br>
+            <br>
+            <div class="raingame">
+
+                <div class="displayholder">
+                    <div class="display">
+                        <img src="images/factory.png" alt="factory">
+                    </div>
+                </div>
+                <div class="buttonholder">
+                    <button class="playraingame">Play</button>
+                </div>
+                <div class="buttonholder">
+                    <button class="resetraingame">Reset</button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- SOURCES -->
+            <div class="text">
+                <h3>Sources</h3>
+                <p>
+                    <br>
+                    <a href="https://www.internetgeography.net/topics/what-is-convectional-rainfall/" target="_blank">https://www.internetgeography.net/topics/what-is-convectional-rainfall/</a>
+                    <br>
+                    <br>
+                    <a href="https://www.linkedin.com/pulse/can-you-explain-rain-should-read-article-bareways" target="_blank">https://www.linkedin.com/pulse/can-you-explain-rain-should-read-article-bareways</a>
+                </p>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
