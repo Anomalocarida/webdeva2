@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (temperature > 30 && humidity > 70 && pressure < 1000) {
             cloudPreview.textContent = 'High temperature, high humidity, and low pressure: Likely to form large clouds and rain.';
-        } else if (temperature < 20 && humidity > 50 && pressure > 1010) {
+        } else if (temperature < 30 && humidity > 49 && pressure > 1010) {
             cloudPreview.textContent = 'Cool temperature, moderate humidity, and high pressure: Likely to form light clouds.';
         } else if (temperature > 25 && humidity > 60 && pressure < 1000) {
             cloudPreview.textContent = 'Warm temperature, high humidity, and low pressure: Likely to form thunderstorms.';
@@ -252,7 +252,6 @@ const colorPicker = document.getElementById("color");
 
 let rainInterval;
 let isRaining = true;
-let currentInterval = intensitySlider.value;
 
 // Function to create a single raindrop
 function createRaindrop() {
@@ -277,7 +276,8 @@ function createRaindrop() {
 
 // Function to start generating raindrops
 function startRain() {
-    rainInterval = setInterval(createRaindrop, currentInterval);
+    const interval = 600 - intensitySlider.value; // Invert intensity relationship
+    rainInterval = setInterval(createRaindrop, interval);
 }
 
 // Function to stop generating raindrops
@@ -299,7 +299,6 @@ toggleRainButton.addEventListener("click", () => {
 
 // Adjust rain intensity based on slider value
 intensitySlider.addEventListener("input", () => {
-    currentInterval = intensitySlider.value;
     if (isRaining) {
         stopRain();
         startRain();
@@ -308,3 +307,4 @@ intensitySlider.addEventListener("input", () => {
 
 // Start rain on page load
 startRain();
+
