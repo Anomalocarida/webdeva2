@@ -1,230 +1,340 @@
-* {
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Courier New';
-    overflow-wrap: break-word;
-    color:white;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-body {
-    background-image: url("images/storm.png"); /* Replace with your image path */
-    background-attachment: fixed;
-    background-size: cover; /* Ensure the image covers the entire area */
-    background-repeat: no-repeat; /* Avoid repeating the image */
-    background-position: center; /* Center the image */
+h2 {
+    color: #0f3460;
 }
 
-.page {
-    /*width: 100vw;*/
-    height: 80vh;
-    font-size: 14px;
-    
-    text-align:justify;
+/* Header Styles */
+header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('images/rain-hero-image.jpg'); /* Replace 'your-image-file.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
 }
 
-.page>p {
-    width:100%;
+.hero-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent overlay for better text readability */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-image h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.hero-image p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+
+/* Navigation Bar */
+nav {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
     display: inline;
+    margin: 0 20px;
 }
 
-#buttoncontainer {
-    display: inline-block;
-    /*position:absolute;*/
-    background-color: rgba(50, 50, 50, 0.7);
-    width: 100%;
-    height: 300px;
-    padding-top: 20px;
-
-    image-rendering: pixelated;
-    border-image-source: url('images/border.png'); /* Path to your image */
-    border-image-slice: 7; 
-    border-image-repeat: stretch; /* Stretches the edges */
-    border-image-width: 40px;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
-.text {
-    transition: border-image-width 0.3s ease;
-    background-color: rgba(50, 50, 50, 0.7);
-    
-    padding-top: 20px;
-    image-rendering: pixelated;
-    border-image-source: url('images/border.png'); /* Path to your image */
-    border-image-slice: 7; /*the amount of pixels to slice the image in each side*/
-    border-image-repeat: stretch; /* Stretches the edges */
-    border-image-width: 20px; /* width of border */
-    width:100%;
-}
-.text > p, .text>h3, .text>h1 {
-    padding-left: 3%;
-    padding-right: 3%;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-.text > h1, .text > h3 {
+/* Section Styles */
+section {
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Interactive Placeholder */
+.interactive-placeholder {
+    background-color: #ecf0f1;
+    padding: 30px;
     text-align: center;
+    border-radius: 10px;
 }
 
-.text:hover {
-    /*background-color: rgba(80, 80, 80, 0.7);*/
-    border-image-width: 30px;
+/* For centering an image horizontally and vertically */
+.center-image {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+    height: 100%;              /* Full height of the container */
+    width: 100%;               /* Full width of the container */
 }
 
-.textimagepair {
-    display:flex;
-    flex-wrap:wrap;
+/* Optional: Style the image itself */
+.center-image img {
+    max-width: 100%;           /* Ensures image is responsive */
+    max-height: 100%;          /* Ensures image stays within bounds */
+    object-fit: contain;       /* Ensures image doesn't get distorted */
 }
 
-button {
-    transition: border 0.1s linear;
-    display: inline-block;
-    /*    left: 50%;
-    top: 50%;*/
-    width: 70%;
-    height: 60px;
-    left: 15%;
-    background-color: rgb(80, 80, 80);
-    z-index: 1;
-    font-size: 18px;
-    border: 2px solid rgb(200, 200, 200);
+/* Style for the interactive section */
+#interactiveElement {
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
-button:hover {
-    border: 8px solid rgb(200, 200, 200);
+/* Style for the slider container */
+.slider-container {
+    margin: 10px 0;
 }
 
-button:active {
-    background-color: rgb(120, 120, 120);
-}
-
-#page1btn, #page2btn, #page3btn, #pagesbtn {
-    
-    position: absolute;
-    
-}
-
-
-
-.topic {
-    position: absolute;
-    text-align: center;
-    margin-top: 150px;
+input[type="range"] {
     width: 100%;
+    max-width: 400px;
 }
 
-.imgwrapper {
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for the output section */
+.output {
+    margin-top: 20px;
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.animation-container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: auto;
+    background-color: #87CEEB; /* Sky blue */
+    border: 1px solid #000;
+}
+
+#rain-drop {
+    animation: rain-drop-animation 2s infinite;
+}
+
+@keyframes rain-drop-animation {
+    0% {
+        r: 0;
+        cy: 50;
+        opacity: 1;
+    }
+    100% {
+        r: 5;
+        cy: 350;
+        opacity: 0;
+    }
+}
+
+@keyframes flood-rise {
+    0% {
+        d: path("M0,350 C200,350 600,350 800,350");
+    }
+    100% {
+        d: path("M0,300 C200,250 600,250 800,300");
+    }
+}
+
+.infographic-container {
     display: flex;
     justify-content: center;
-    align-items:center;
-    width: 100%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.infographic-container img {
+    width: 100%; /* Makes the image take up 100% of the container's width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 800px; /* Optional: Limits the image width to a max of 800px */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Timeline Styles */
+.timeline {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.timeline-container {
     position: relative;
-    /*background-color:black;*/
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-.enlarged {
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    background-color: #f0f0f0;
+}
+
+.timeline-date {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(2);
-    z-index: 1001;
-    overflow:visible;
-}
-
-#titleimg {
-    width: 100%;
-    height: 100px;
-    object-fit: contain; /* Maintain aspect ratio */
-    top: 0;
     left: 0;
-    margin-bottom:25px;
+    top: 0;
+    font-size: 18px;
+    color: #888;
 }
 
-.contentimg {
-    
-    width: 30vw;
-    max-height: 30vh;
-    object-fit: contain; /* Maintain aspect ratio */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: rgba(1, 1, 1, 0);
-    
+.timeline-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.raingame {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    width:100%;
+.timeline-item h3 {
+    margin: 0;
+    color: #333;
 }
 
-.raingame > .displayholder {
-    display:flex;
-    justify-content:center;
-    width:100%;
+.timeline-item p {
+    color: #555;
 }
 
-.raingame > .displayholder > .display {
-    background-color:lightskyblue;
-    width: min(50vw, 50vh);
-    height: min(50vw, 50vh);
-    position:relative;
-    overflow:hidden;
-}
-
-.raingame > .displayholder > .display > img {
-    height: 100%;
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    top: 41%;
-    left: -35%;
-    transform: scale(0.2);
-    position: absolute;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
 }
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#rain-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Raindrop Styling */
 .raindrop {
-    background-color:gray;
-    width:2%;
-    height:2%;
-    position:absolute;
-    display:none;
+    position: fixed; /* Fixed to the viewport */
+    top: -10px; /* Start slightly above the viewport */
+    width: 2px;
+    height: 10px;
+    background: #3498db;
+    animation: fall linear infinite;
+    opacity: 0.7;
 }
 
-.raingame > .buttonholder {
-    display:flex;
-    justify-content:center;
-    width:50%;
-    height: 5vh;
-    padding-top:10%;
-}
-.raingame > .buttonholder > button {
-    width:75%;
+@keyframes fall {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(100vh);
+    }
 }
 
-@media screen and (min-width: 801px) 
-{
-    .page{
-        font-size:20px;
-    }
-    .textimagepair>.text {
-        width:50%;
-    }
-    .textimagepair > .imgwrapper {
-        width: 50%;
-        float:left;
-    }
+/* Controls Styling */
+#controls {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Arial, sans-serif;
+}
 
-    .raingame > .displayholder {
-        display: flex;
-        justify-content: center;
-        width: 50%;
-    }
-
-    .raingame > .buttonholder {
-        display: flex;
-        justify-content: center;
-        width: 20%;
-        height: 5vh;
-        padding-top: 10%;
-    }
-
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
 }
