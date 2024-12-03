@@ -379,29 +379,24 @@ button:hover {
     }
 }
 
-/* Controls Styling */
-#controls {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: Arial, sans-serif;
-}
 
-@media (max-width: 768px) {
-    #controls {
-        position: static; /* Prevents sticky behavior if screen height is too small */
-        width: 100%; /* Makes it responsive for smaller screens */
-        max-width: none;
-        margin: 0 auto; /* Centers the controls if needed */
+#controls {
+        position: relative; /* Keeps the controls fixed within the section while scrolling */
+        top: 10px; /* Distance from the top of the viewport */
+        z-index: 10; /* Ensures it stays above other elements */
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers controls horizontally */
+        justify-content: center; /* Centers the content vertically */
+        gap: 10px; /* Adds space between controls */
+        font-family: Arial, sans-serif;
+        max-width: 500px; /* Limits the width for better layout */
+        margin: 0 auto; /* Centers the controls horizontally */
     }
-}
 
 
 /* Footer Styles */
@@ -442,17 +437,33 @@ footer {
         font-size: 16px;
     }
 
+    #interactive {
+        position: relative; /* Establishes a positioning context for child elements */
+        display: flex; /* Flexbox to center child elements */
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Vertically center the content */
+        align-items: center; /* Horizontally center the content */
+        text-align: center; /* Ensures the text is centered within the container */
+        padding: 20px; /* Adds padding around the section */
+        min-height: 400px; /* Ensures section height is at least 400px */
+    }
+
     #controls {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.9);
+        position: sticky; /* Keeps the controls fixed within the section while scrolling */
+        top: 10px; /* Distance from the top of the viewport */
+        z-index: 10; /* Ensures it stays above other elements */
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
         padding: 10px 20px;
         border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers controls horizontally */
+        justify-content: center; /* Centers the content vertically */
+        gap: 10px; /* Adds space between controls */
+        font-family: Arial, sans-serif;
+        max-width: 500px; /* Limits the width for better layout */
+        margin: 0 auto; /* Centers the controls horizontally */
     }
 
     .center-image img {
