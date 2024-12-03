@@ -305,6 +305,6 @@ intensitySlider.addEventListener("input", () => {
     }
 });
 
-// Start rain on page load
+// Stop rain on page load
 stopRain();
 
