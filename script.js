@@ -251,7 +251,7 @@ const toggleRainButton = document.getElementById("toggle-rain");
 const colorPicker = document.getElementById("color");
 
 let rainInterval;
-let isRaining = true;
+let isRaining = false;
 
 // Function to create a single raindrop
 function createRaindrop() {
