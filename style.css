@@ -381,7 +381,7 @@ button:hover {
 
 /* Controls Styling */
 #controls {
-    position: fixed;
+    position: sticky;
     top: 10px;
     left: 10px;
     z-index: 10;
@@ -393,6 +393,16 @@ button:hover {
     gap: 10px;
     font-family: Arial, sans-serif;
 }
+
+@media (max-width: 768px) {
+    #controls {
+        position: static; /* Prevents sticky behavior if screen height is too small */
+        width: 100%; /* Makes it responsive for smaller screens */
+        max-width: none;
+        margin: 0 auto; /* Centers the controls if needed */
+    }
+}
+
 
 /* Footer Styles */
 footer {
