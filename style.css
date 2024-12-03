@@ -21,42 +21,63 @@ header {
     background-position: center;
 }
 
-/* Base styles for all screens */
-
-img {
-    max-width: 100%;
-    height: auto; /* Ensures images scale proportionally */
+/* Base styles for larger screens */
+#interactive {
+    padding: 20px;
 }
 
-/* Styles for screens smaller than 768px (tablets and phones) */
+#rain-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #FFFFFF);
+}
+
+#controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#controls label,
+#controls input,
+#controls button {
+    margin: 5px;
+}
+
+/* For smaller devices (tablets and phones) */
 @media (max-width: 768px) {
-    h3 {
-        font-size: 1.2rem;
+    #rain-container {
+        height: 300px;
     }
 
-    p {
-        font-size: 0.9rem;
+    #controls {
+        flex-direction: column;
+        align-items: center;
     }
 
-    #bar-chart-container {
-        width: 100%;
+    #controls label,
+    #controls input,
+    #controls button {
+        width: 90%; /* Adjust size for small screens */
+        text-align: center;
     }
 }
 
-/* Styles for screens smaller than 480px (phones) */
+/* For very small devices (phones) */
 @media (max-width: 480px) {
-    h3 {
-        font-size: 1rem;
+    #rain-container {
+        height: 200px;
     }
 
-    p {
-        font-size: 0.8rem;
-    }
-
-    .container {
+    #controls {
+        flex-direction: column;
         padding: 10px;
     }
 }
+
 
 .hero-image .overlay {
     position: absolute;
