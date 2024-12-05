@@ -304,3 +304,11 @@ intensitySlider.addEventListener("input", () => {
         startRain();
     }
 });
+
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const nav = document.querySelector('nav');
+
+hamburgerMenu.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
