@@ -309,11 +309,3 @@ intensitySlider.addEventListener("input", () => {
 stopRain();
 
 
-const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
-
-    // Add a click event listener to the hamburger button
-    hamburger.addEventListener('click', function () {
-        navbar.classList.toggle('active'); // Toggle the 'active' class
-    });
-});
