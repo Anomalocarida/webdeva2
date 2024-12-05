@@ -71,7 +71,7 @@ header {
 
 .topnav .icon {
   display: none;
-  color: white;
+  color: green;
 }
 
 @media screen and (max-width: 600px) {
