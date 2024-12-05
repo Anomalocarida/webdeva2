@@ -18,13 +18,14 @@
     </header>
 
     <!-- Navigation Bar -->
-    <nav>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <ul id="nav-links">
+    <!-- Hamburger Menu (Visible on mobile) -->
+    <button class="hamburger" id="hamburger">
+        &#9776; <!-- This is the hamburger icon -->
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#scienceOfRain">The Science of Rain</a></li>
             <li><a href="#impact">Impact of Rain</a></li>
@@ -33,7 +34,6 @@
             <li><a href="#resources">Resources</a></li>
         </ul>
     </nav>
-
 
     <!-- Introduction Section -->
     <section id="home">
