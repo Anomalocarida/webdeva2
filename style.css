@@ -44,33 +44,62 @@ header {
     margin-top: 10px;
 }
 
-/* Navigation Bar */
-nav {
-    background-color: #2c3e50;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
+/* General styles for navbar */
+#navbar {
+    display: none; /* Initially hide the navbar */
+    position: absolute; /* Overlay for the menu */
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
-nav ul {
+/* Menu items */
+#navbar ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 20px;
+#navbar ul li {
+    margin: 10px 0;
 }
 
-nav ul li a {
-    color: white;
+#navbar ul li a {
     text-decoration: none;
-    font-size: 1.2em;
+    color: white;
+    padding: 10px;
+    display: block;
+    text-align: left;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+/* Hamburger menu */
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    color: white;
 }
+
+/* When the 'active' class is added, show the navbar */
+#navbar.active {
+    display: block;
+}
+
+/* Ensure layout consistency on larger screens */
+@media (min-width: 768px) {
+    #navbar {
+        width: 250px; /* Larger width for desktop */
+    }
+}
+
 
 /* Section Styles */
 section {
