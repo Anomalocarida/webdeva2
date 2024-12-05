@@ -309,10 +309,9 @@ intensitySlider.addEventListener("input", () => {
 stopRain();
 
     const hamburger = document.getElementById('hamburger');
-    const navbar = document.getElementById('navbar');
+      const mobileNav = document.getElementById('mobile-nav');
 
-    // Toggle menu visibility on hamburger click
-    hamburger.addEventListener('click', function () {
-        navbar.classList.toggle('active'); // Add or remove the active class
+      hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
     });
 });
