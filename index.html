@@ -1,492 +1,529 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Anatomy of Rain</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Header Section with Hero Image -->
-    <header>
-        <div class="hero-image">
-            <div class="overlay">
-                <h1>The Anatomy of Rain</h1>
-                <p>Exploring the Science Behind Every Drop</p>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#scienceOfRain">The Science of Rain</a></li>
-            <li><a href="#impact">Impact of Rain</a></li>
-            <li><a href="#fun-facts">Fun Facts</a></li>
-            <li><a href="#interactive">Interactive Visuals</a></li>
-            <li><a href="#resources">Resources</a></li>
-        </ul>
-    </nav>
-
-    <!-- Introduction Section -->
-    <section id="home">
-        <div class="container">
-            <h2>Introduction</h2>
-            <p>Rain. It’s something we experience every day, yet few of us truly understand its journey. Have you ever wondered how a simple drop of water forms, travels, and falls from the sky? What triggers the clouds to release their contents in the first place? Rain is not just water falling from the sky; it’s a powerful natural force that shapes our landscapes, nourishes our crops, and even inspires art. From the science behind its formation to its cultural significance, rain touches every aspect of our lives. Let’s dive into the science behind this incredible phenomenon and uncover the mysteries hidden in every drop.</p>
-        </div>
-    </section>
-
-    <!-- Science of Rain Section -->
-    <section id="scienceOfRain">
-        <div class="container">
-        <h2>The Science of Rain</h2>
-
-        <div class="section-content">
-            <h3>1. What is Rain?</h3>
-            <p><strong>Definition:</strong> Rain is water that falls from the atmosphere to the Earth's surface in the form of liquid droplets. Rain is a crucial part of the water cycle and plays an essential role in replenishing water sources like rivers, lakes, and groundwater.</p>
-
-            <h3>2. The Water Cycle:</h3>
-            <p><strong>Evaporation:</strong> Water from oceans, rivers, lakes, and plants turns into water vapor due to heat from the sun.</p>
-            <p><strong>Condensation:</strong> Water vapor rises into the atmosphere where it cools and condenses into tiny droplets that form clouds.</p>
-            <p><strong>Precipitation:</strong> When the cloud droplets combine and grow large enough to overcome air resistance, they fall as precipitation—rain, snow, or hail.</p>
-            <p><strong>Collection:</strong> After the rain hits the ground, it flows into rivers and streams, returning to larger bodies of water, where the cycle begins again.</p>
-        
-        <!-- Interactive Element Idea: Water Cycle Animation -->
-        <div class="interactive-element">
-            <p><strong>Interactive Element:</strong> (A simple animation or graphic showing each stage of the water cycle, with an emphasis on condensation and precipitation leading to rain.)</p>
-            <!-- Placeholder for animation -->
-            <div class="center-image">
-                <img src="images/The Rain.gif" alt="Water Cycle Animation" class="interactive-animation">
-            </div>
-        </div>
-
-            <h3>3. How Does Rain Form?</h3>
-            <p><strong>Cloud Formation:</strong> Clouds are made up of tiny water droplets or ice crystals. These form when moist air rises and cools, reaching its dew point (temperature where water vapor condenses).</p>
-            <p><strong>Types of Clouds:</strong> 
-            <ul>
-                <li><strong>Cumulus Clouds:</strong> Often associated with fair weather but can grow into larger clouds that produce rain.</li>
-                <li><strong>Stratus Clouds:</strong> Flat, layered clouds that can bring light, steady rain.</li>
-                <li><strong>Cumulonimbus Clouds:</strong> Towering clouds that produce heavy thunderstorms, lightning, and rainfall.</li>
-            </ul>
-            </p>
-            <p><strong>Precipitation Threshold:</strong> For rain to fall, the tiny droplets in the cloud must combine to form larger droplets. If they grow too heavy for the air to support, they fall to the ground as rain.</p>
-
-            <h3>4. Factors Influencing Rain Formation:</h3>
-            <ul>
-                <li><strong>Temperature:</strong> Warmer air holds more moisture, so hot weather often leads to more intense rainfall.</li>
-                <li><strong>Humidity:</strong> High humidity (the amount of moisture in the air) promotes cloud formation and the likelihood of rain.</li>
-                <li><strong>Air Pressure:</strong> Low-pressure systems are associated with cloudy, rainy weather, while high-pressure systems usually lead to clear skies.</li>
-                <li><strong>Wind:</strong> Wind plays a key role in the movement of moist air, carrying water vapor to different regions and affecting where rain falls.</li>
-            </ul>
-
-        <!-- Interactive Element Idea: Factor Adjustments -->
-            <div class="interactive-element">
-                <p><strong>Interactive Element:</strong> (A slider or toggle that lets users adjust factors like temperature, humidity, and pressure to see how these affect cloud formation and the likelihood of rain.)</p>
-
-        <!-- Placeholder for interactive factor sliders -->
-                <div class="slider-container">
-                    <label for="temperature">Temperature (°C): <span id="tempValue">20</span></label>
-                    <input type="range" id="temperature" min="-10" max="50" value="20">
-                </div>
-
-                <div class="slider-container">
-                    <label for="humidity">Humidity (%): <span id="humidityValue">50</span></label>
-                    <input type="range" id="humidity" min="0" max="100" value="50">
-                </div>
-
-                <div class="slider-container">
-                    <label for="pressure">Pressure (hPa): <span id="pressureValue">1013</span></label>
-                    <input type="range" id="pressure" min="900" max="1100" value="1013">
-                </div>
-
-                <div class="output">
-                    <h3>Cloud Formation Preview</h3>
-                    <p id="cloudPreview">Adjust the sliders to see how temperature, humidity, and pressure affect cloud formation and rain likelihood.</p>
-                </div>
-            </div>
-
-
-            <h3>5. Types of Rain:</h3>
-            <ul>
-                <li><strong>Convectional Rain:</strong> This occurs when the sun heats the Earth's surface, causing warm, moist air to rise. As the air cools, it condenses and forms clouds, leading to rain.</li>
-                <li><strong>Orographic Rain:</strong> This type of rain occurs when moist air is forced to rise over mountains. As it rises, it cools, condenses, and falls as rain on the windward side of the mountain.</li>
-                <li><strong>Frontal Rain:</strong> This happens when a warm air mass meets a cold air mass, forcing the warm air to rise. As it cools, it condenses and forms rain.</li>
-                <li><strong>Relief Rain:</strong> A specific type of orographic rain, where the moisture is lifted due to physical geographical features like mountains, leading to localized rainfall.</li>
-            </ul>
-
-            <h3>6. Rainfall Measurement:</h3>
-            <p><strong>Rain Gauges:</strong> A rain gauge is a device used to measure the amount of rainfall in a specific area over a set period of time. The most common type is a cylindrical container that collects rain and measures the water level.</p>
-            <p><strong>Rain Intensity:</strong> Rainfall can vary in intensity—from light showers to heavy downpours. Scientists measure this intensity in millimeters per hour (mm/hr).</p>
-
-            <h3>Summary:</h3>
-            <p>Rain is the product of intricate interactions between temperature, pressure, moisture, and geography. By understanding the science behind rain, we can better appreciate its role in the water cycle and how it impacts ecosystems and our daily lives.</p>
-        </div>
-    </section>
-
-
-    <!-- Impact of Rain Section -->
-    <section id="impact">
-        <div class="container">
-            <h2>The Impact of Rain</h2>
-            <p>Rain is a powerful force that touches almost every part of our world. It nourishes crops, replenishes freshwater supplies, and supports ecosystems. However, too much of it can cause devastating floods, disrupt daily life, and even pose health risks. Let's explore the wide-ranging impact of rain on our environment, infrastructure, and more.</p>
-
-            <h3>1. Environmental Impact of Rain</h3>
-            <p>Rain plays a crucial role in maintaining healthy ecosystems. It is a primary contributor to the water cycle, providing water to rivers, lakes, and underground aquifers. Rain supports plant growth, replenishes natural habitats, and helps maintain biodiversity. However, when rain is excessive, it can cause environmental harm, such as:</p>
-
-            <p><strong>Flooding:</strong><br>
-            Heavy rainfall can overwhelm drainage systems, rivers, and streams, leading to flooding. This can result in the loss of natural habitats for animals and plants, and may cause destruction to wildlife populations, especially in low-lying areas.</p>
-
-            <p><strong>Soil Erosion:</strong><br>
-            Intense rain can wash away topsoil, which is essential for growing vegetation. This erosion can lead to the degradation of farmland and the loss of habitats, affecting both plant and animal life.</p>
-
-            <p><strong>Habitat Destruction:</strong><br>
-            Flooding caused by excessive rain can destroy homes for animals, displacing wildlife and affecting their survival.</p>
-
-            <p><strong>Weather Simulation Animation:</strong><br>
-            Watch a dynamic simulation of rainfall and flooding in action! When you press "Start Rain," the raindrop falls, growing and splashing until it hits the ground, triggering the "Start Flood" animation. The flood gradually rises, changing the background color to simulate an intensifying weather event. Press "Reset" once the flood reaches its peak, the animation resets and is ready to play again, creating an immersive loop of weather changes.</p>
-
-            <!-- Interactive Element: River Basin Animation -->
-            <div id="animation-container" class="animation-container">
-                <svg id="river-basin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
-                    <!-- Ground: Green -->
-                    <rect x="0" y="300" width="800" height="100" fill="green" />
-                    <!-- Soil: Brown -->
-                    <rect x="0" y="350" width="800" height="50" fill="#8B4513" />
-                    <!-- Raindrop -->
-                    <circle id="rain-drop" cx="400" cy="50" r="0" fill="blue" />
-                    <!-- River Path -->
-                    <path id="river-path" d="M0,350 C200,250 600,250 800,350" fill="none" stroke="blue" stroke-width="5" />
-                    <!-- Flood Path -->
-                    <path id="flood-path" d="M0,350 C200,350 600,350 800,350" fill="none" stroke="blue" stroke-width="6" stroke-dasharray="5,5" />
-                </svg>
-                <!-- Buttons -->
-                <button id="start-rain">Start Rain</button>
-                <button id="reset">Reset</button>
-            </div></br>
-
-
-            <h3>2. Impact of Rain on Agriculture</h3>
-            <p><strong>Positive Effects:</strong><br>
-            <p><em>Crops and Irrigation:</em></br>
-            Rain provides essential water to crops, especially in regions that depend on rainfall for irrigation. Regular rainfall is crucial for ensuring healthy crops and sustaining agricultural economies.</p>
-
-            <p><em>Improved Crop Yields:</em><br>
-            Sufficient rainfall can increase the productivity of crops like wheat, rice, and corn. The right amount of rain ensures that plants grow healthy, producing higher yields and better quality produce.</p>
-
-            <p><strong>Negative Effects:</strong><br>
-            <p><em>Crop Damage from Excessive Rain:</em><br>
-            While rain is vital for crops, too much rainfall can harm them. Waterlogging occurs when the ground becomes saturated, leading to poor root aeration and plant suffocation. This is especially harmful to crops like potatoes and carrots.</p>
-
-            <p><em>Delayed Harvests:</em><br>
-            Prolonged rainfall or storms can delay harvest seasons, reducing the amount of time farmers have to gather their crops. This can also lead to crops being damaged by mold or rot.</p>
-
-            <p><em>Pests and Diseases:</em><br>
-            Excessive rain creates a breeding ground for pests and plant diseases, which thrive in moist environments. Fungus, mold, and bacterial infections can spread rapidly, damaging crops and reducing yields.</p>
-
-            <!-- Rainfall Impact Bar Chart -->
-            <div id="rainfall-impact-chart">
-                <h3>Impact of Rainfall on Crop Yields</h3>
-                <p>This bar chart illustrates how different rainfall levels—light, moderate, and heavy—affect the yields of crops such as wheat, corn, and rice. It highlights the varying sensitivities of crops to rainfall intensity.</p>
-                <canvas id="bar-chart" width="800" height="400"></canvas>
-            </div>
-
-            <h3>3. Impact of Rain on Infrastructure</h3>
-                <p><strong>The Positive Impact of Rain on Infrastructure</strong><br>
-                <p>While heavy rainfall can be damaging, it also plays a crucial role in the sustainability of urban and rural infrastructure. Properly managed rainfall can lead to improved water management, enhanced resilience of infrastructure, and more sustainable communities.</p>
-    
-                <!-- Infographic Section -->
-            <div class="infographic-container">
-                <img src="images/positive-impact-infographic.jpg" alt="Positive Impact of Rain Infographic">
-            </div>
-
-            <!-- Supporting Text -->
-            <p>Rainwater harvesting systems are a vital part of sustainable urban infrastructure. These systems help collect and store rainwater for use in irrigation, landscaping, and non-potable applications, reducing the pressure on freshwater resources. Additionally, rain supports the natural cooling of cities, reducing the urban heat island effect and improving air quality.</p>
-            <p>Rainfall also promotes soil health, which is crucial for the stability of infrastructure. Well-maintained soil prevents erosion and ensures that buildings and roads are less likely to shift or degrade over time.</p>
-
-            <em>Water Supply for Communities:</em><br>
-            Rain is a vital source of drinking water for many communities, especially in areas that rely on rainwater harvesting systems. It fills reservoirs and supplies water to homes and businesses.</p>
-
-            <p><em>Hydroelectric Power Generation:</em><br>
-            Rainfall helps maintain the flow of rivers and streams, which are used to generate hydroelectric power. Consistent rainfall supports renewable energy production, contributing to sustainable electricity generation.</p>
-
-                <p><strong>The Negative Impact of Rain on Infrastructure</strong><br>
-                <p>Rain can be a powerful force of nature, but its intensity and frequency can have severe consequences on infrastructure and the environment. In some cases, excessive rainfall leads to shoreline erosion, flooding, and other forms of damage that can disrupt ecosystems and pose a risk to communities.</p>
-    
-                <!-- Infographic Section -->
-            <div class="infographic-container">
-                <img src="images/Shoreline-Erosion.gif" alt="Shoreline Erosion" class="shoreline-erosion-img">
-            </div>
-
-            <!-- Supporting Text -->
-            <p>Excessive rainfall and storm surges increase the risk of shoreline erosion, destabilizing coastlines and threatening infrastructure. Coastal roads, homes, and wildlife habitats can be washed away, leading to significant economic and environmental costs. The erosion of shorelines not only causes immediate damage but also has long-term effects on coastal ecosystems.</p>
-            <p>In addition to coastal erosion, rain can exacerbate other destructive phenomena like flooding and landslides, which contribute to the weakening of infrastructure and require costly repairs. As climate change intensifies weather patterns, the risk of shoreline erosion and other rain-related damage is expected to rise.</p>
-
-            <em>Flooding of Roads and Buildings:</em><br>
-            Heavy rainfall can lead to flooding, which damages roads, bridges, and buildings. Waterlogged infrastructure can result in traffic delays, power outages, and the destruction of homes, schools, and hospitals.</p>
-
-            <p><em>Soil Erosion and Landslides:</em><br>
-            In areas with steep terrain, heavy rain can trigger landslides, particularly in areas where deforestation has occurred. Soil erosion weakens the foundation of roads and buildings, leading to further damage and destruction.</p>
-
-            <p><em>Drainage System Overload:</em><br>
-            Urban areas, especially those with inadequate drainage systems, can experience severe flooding when rainwater cannot be quickly drained away. This results in water pooling on roads, disrupting transportation and increasing the risk of accidents.</p>
-
-            <h3>4. Impact of Rain on Human Health</h3>
-            <p><strong>Positive Effects:</strong><br>
-            <em>Improved Air Quality:</em><br>
-            Rain can help cleanse the air by washing away pollutants, dust, and pollen. This can lead to better air quality, benefiting people with respiratory issues like asthma or allergies.</p>
-
-            <p><em>Hydration and Water Resources:</em><br>
-            Rain helps cleanse the air by removing pollutants and dust particles. This can be especially beneficial for people with respiratory issues like asthma or allergies, as it reduces the number of allergens and air pollutants. The fresh, clean air after a rainfall is often perceived as refreshing.</p>
-
-            <p><em>Reduction in Heat Stress:</em><br>
-            In hot climates, rain helps lower the temperature, providing relief from heat stress. Intense heat can lead to conditions like heat exhaustion or heatstroke, but rain can alleviate the risk of these conditions by cooling the environment.</p>
-
-            <p><strong>Negative Effects:</strong><br>
-            <em>Waterborne Diseases:</em><br>
-            Heavy rainfall can lead to contamination of water sources. When sewage systems overflow or when rainwater collects in unsanitary environments, bacteria, viruses, and parasites can spread, leading to illnesses such as cholera, dysentery, and typhoid. Floodwaters can carry harmful contaminants into homes, resulting in increased risks of gastrointestinal infections and skin diseases.</p>
-
-            <p><em>Mosquito-Borne Diseases:</em><br>
-            Rainwater often collects in stagnant puddles and containers, providing ideal breeding grounds for mosquitoes. This can lead to an increase in diseases such as malaria, dengue fever, and Zika virus, which are transmitted by mosquito bites. The spread of these diseases can become a significant public health concern after heavy rainfall.</p>
-
-            <p><em>Accidents and Injuries:</em><br>
-            Intense rainfall can lead to flash floods, which pose risks to human health and safety. Floods can cause drowning, injuries from debris, and physical trauma from being swept away. The disruption of normal life during floods can also prevent access to healthcare and other critical services, leading to long-term health impacts.</p>
-
-            <p><em>The Health Risk Calculator:</em><br>
-            An interactive tool that allows users to assess potential health risks associated with rainfall in their area. By inputting data such as rainfall intensity, location type, and duration, users receive a personalized risk score indicating the likelihood of health issues like waterborne diseases and mosquito-borne illnesses. This tool educates users on how different weather conditions can impact their health and helps them make informed decisions.</p>
-
-            <form id="health-risk-form">
-                <label for="rainfall">Enter rainfall intensity (mm/hour):</label><br>
-                <input type="number" id="rainfall" name="rainfall" min="0" required><br><br>
-    
-                <label for="location">Select location type:</label><br>
-                <select id="location" name="location">
-                    <option value="urban">Urban</option>
-                    <option value="rural">Rural</option>
-                    <option value="coastal">Coastal</option>
-                </select><br><br>
-    
-                <label for="duration">Enter duration of rainfall (hours):</label><br>
-                <input type="number" id="duration" name="duration" min="1" required><br><br>
-    
-                <button type="submit">Calculate Health Risk</button>
-            </form>
-
-            <p id="health-risk-result"></p>
-
-            <h3>5. Cultural and Social Impact of Rain</h3>
-            <p><strong>Positive Effects:</strong><br>
-            <p><em>Cultural Significance:</em><br>
-            Rain has cultural and spiritual significance in many societies. It is often seen as a symbol of fertility, renewal, and prosperity. For example, in some cultures, the arrival of the rainy season is celebrated with festivals and rituals.</p>
-
-            <p><em>Rain in the Arts:</em><br>
-            Rain has inspired countless works of art, music, and literature. Poets, painters, and musicians have all found beauty and symbolism in rain, making it an important cultural symbol.</p>
-
-            <p><strong>Negative Effects:</strong><br>
-            <p><em>Disruption of Social Events:</em><br>
-            Heavy rain can disrupt outdoor social events like festivals, weddings, or sports games. It can also affect daily life, causing delays in transportation, work, and schooling.</p>
-
-            <p><em>Economic Impact on Tourism:</em><br>
-            For regions dependent on tourism, especially those relying on good weather for outdoor activities, heavy rainfall can have a significant economic impact by discouraging tourists and limiting activities.</p>
-
-            <p><strong>Rain in Art: A Cultural Journey Through Time</strong><br>
-            <p>Explore the creative influence of rain through this interactive timeline. From iconic paintings to timeless music and poetry, discover how rain has inspired artists, musicians, and writers across history. Click on each entry to learn more about the masterpieces and the cultural significance of rain in art.</p>
-
-            <div class="timeline">
-                <h2>Rain in Art: A Visual Timeline</h2>
-                <div class="timeline-container">
-                    <!-- Timeline Entries -->
-                    <div class="timeline-item" onclick="showArtwork('artwork1')">
-                    <div class="timeline-date">1872</div>
-                    <div class="timeline-content">
-                        <h3>Claude Monet - "Impression, Sunrise"</h3>
-                        <p>A masterpiece that captures the misty sunrise and the reflection of light on water.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item" onclick="showArtwork('artwork2')">
-                    <div class="timeline-date">1939</div>
-                    <div class="timeline-content">
-                        <h3>Gene Kelly - "Singin' in the Rain"</h3>
-                        <p>An iconic scene from the famous musical film, celebrating the joy of dancing in the rain.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item" onclick="showArtwork('artwork3')">
-                    <div class="timeline-date">1921</div>
-                    <div class="timeline-content">
-                        <h3>Langston Hughes - "The Rain"</h3>
-                        <p>Poetry that captures the melancholy and beauty of the rain.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Artwork Pop-up Modal -->
-        <div id="artwork1" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('artwork1')">&times;</span>
-                <h3>Claude Monet - "Impression, Sunrise"</h3>
-                <img src="images/monet-impression-sunrise.jpg" alt="Impression, Sunrise by Claude Monet">
-                <p>This piece captures the essence of misty mornings with soft colors reflecting on water.</p>
-            </div>
-        </div>
-
-        <div id="artwork2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('artwork2')">&times;</span>
-                <h3>Gene Kelly - "Singin' in the Rain"</h3>
-                <img src="images/singin-in-the-rain.jpg" alt="Gene Kelly in Singin' in the Rain">
-                <p>This joyful sequence from the 1952 film symbolizes freedom, optimism, and the beauty of rain.</p>
-            </div>
-        </div>
-
-        <div id="artwork3" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('artwork3')">&times;</span>
-                <h3>Langston Hughes - "The Rain"</h3>
-                <p><em>"The rain is full of life, bringing peace and refreshment..."</em></p>
-                <p>This poem explores the calming and cleansing qualities of rain in nature and in human life.</p>
-            </div>
-        </div>
-
-        </div>
-    </section>
-
-
-    <!-- Fun Facts Section -->
-    <section id="fun-facts">
-        <div class="container">
-            <h2>Fun Facts About Rain</h2>
-            <ul>
-                <li><strong>Raindrops Aren't Actually Tear-Shaped</strong><br>Contrary to popular belief, raindrops are not tear-shaped. They start off spherical but flatten out as they fall, taking on a more rounded or even oval shape in the end.</li>
-                <li><strong>The Wettest Place on Earth</strong><br>Mawsynram, a village in India, holds the record for the heaviest rainfall on Earth, receiving an average of 467.4 inches (11,871 mm) of rain per year!</li>
-                <li><strong>Rain Makes the Air Smell Fresh</strong><br>The smell after a rainfall is called "petrichor," derived from plant oils and a compound produced by soil-dwelling bacteria. It’s a refreshing scent that many associate with a clean atmosphere.</li>
-                <li><strong>Clouds Can Carry Millions of Gallons of Water</strong><br>A single cumulus cloud can hold more than 500,000,000 kg (about 1 billion pounds) of water, enough to flood a city!</li>
-                <li><strong>Rainbows Happen Only When It Rains</strong><br>A rainbow occurs when sunlight reflects, refracts, and disperses through water droplets in the air. For this to happen, rain must be falling in one part of the sky while the sun shines from another.</li>
-                <li><strong>The Heaviest Rain Ever Recorded in a Minute</strong><br>The heaviest rainfall ever recorded in just one minute occurred in Alvin, Texas, in 1979. It poured 1.92 inches (49 mm) in just 60 seconds!</li>
-                <li><strong>Rain Can Be Different Colors</strong><br>While rain is usually clear, it can appear red, orange, or even black due to particles in the air, such as dust, pollution, or even volcanic ash!</li>
-                <li><strong>"Raining Cats and Dogs" Is a Real Phenomenon</strong><br>This idiom likely originated in the 17th century when heavy rains would sometimes wash dead animals through the streets. While rare, torrential rain can sometimes carry debris and animals along with it.</li>
-                <li><strong>The First Rainfall on Mars</strong><br>While Mars doesn’t have regular rain like Earth, scientists discovered traces of ancient rainfall, meaning that the Red Planet once had a much wetter environment.</li>
-                <li><strong>Raindrops Can Fall at Different Speeds</strong><br>Depending on the size of the raindrop, it can fall at speeds ranging from 2 to 20 miles per hour (3.2 to 32.2 km/h). Larger drops fall faster, while smaller ones float slower.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Interactive Visuals Section -->
-    <section id="interactive">
-        <div class="container">
-            <h2>Interactive Visuals</h2>
-            <p>Experience the mesmerizing journey of raindrops with this engaging interactive animation. Use the controls to adjust the rain intensity, customize the color of the raindrops, or stop the rain entirely. The animation fills the background, creating a serene and immersive experience while you explore the stages of precipitation. Perfect for learning about the water cycle or simply enjoying a tranquil, rainy ambiance.</p>
-        </div>
-            <div id="controls">
-                <label for="intensity">Rain Intensity:</label>
-                <input type="range" id="intensity" min="50" max="500" step="50" value="100">
-                <button id="toggle-rain">Start Rain</button>
-                <label for="color">Raindrop Color:</label>
-                <input type="color" id="color" value="#3498db">
-        </div>
-        <div id="rain-container"></div>
-
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources">
-        <div class="container">
-            <h2>Resources</h2>
-            <p>Explore more about the science and impact of rain from the following resources:</p>
-            <ul>
-                <h3>1. The Science of Rain</h3>
-                <ul>
-                    <li><a href="https://earthobservatory.nasa.gov/features/Water" target="_blank">NASA - Understanding Rain and Water Cycles</a> - Explore how rain is part of Earth's water cycle, from evaporation to precipitation.</li>
-                    <li><a href="https://www.noaa.gov/education/resource-collections/weather-atmosphere/water-cycle" target="_blank">NOAA - The Water Cycle</a> - A detailed overview of how the water cycle works, with a focus on precipitation.</li>
-                </ul>
-                <h3>2. Impact of Rain</h3>
-                <ul>
-                    <li><a href="https://www.cdc.gov/nceh/hsb/extremeweather/rainflooding.htm" target="_blank">CDC - Health Impacts of Extreme Rain and Flooding</a> - Learn about the health risks associated with extreme weather events like heavy rain, including waterborne diseases and injuries.</li>
-                    <li><a href="https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health" target="_blank">World Health Organization (WHO) - Climate and Health</a> - WHO discusses how climate change, including rainfall patterns, can impact human health, particularly in low-income areas.</li>
-                </ul>
-                <h3>3. Cultural and Social Impact of Rain</h3>
-                <ul>
-                    <li><a href="https://www.accord.org.za/ajcr-issues/rain-and-culture" target="_blank">Rain and Culture - The Role of Rain in Global Traditions</a> - This article delves into the symbolic importance of rain in cultures around the world, from ancient to modern times.</li>
-                    <li><a href="https://www.thecollector.com/rain-in-art-history/" target="_blank">Rain in Art and Music - An Exploration of Its Influence</a> - Explore how rain has inspired various forms of art, music, and literature across history.</li>
-                </ul>
-                <h3>4. Fun Facts About Rain</h3>
-                <ul>
-                    <li><a href="https://www.nationalgeographic.com/science/article/rain" target="_blank">National Geographic - Rain Facts</a> - National Geographic provides a collection of interesting facts about rain, including how it forms and why it falls.</li>
-                    <li><a href="https://www.rmets.org/" target="_blank">The Royal Meteorological Society - Fun Rain Facts</a> - Learn quirky and fascinating facts about rain, including how different countries experience rainfall in unique ways.</li>
-                </ul>
-                <h3>5. Additional Resources</h3>
-                <ul>
-                    <li><a href="https://ourworldindata.org/crop-yields-climate-impact" target="_blank">Our World in Data - Crop Yields and Climate Impact</a> - Explore how rain and climate change are affecting crop yields globally, including insights on how changing precipitation patterns are influencing agricultural production.</li>
-                    <li><a href="https://www.un.org/waterforlifedecade/agriculture.shtml" target="_blank">United Nations - The Impact of Water on Agriculture</a> - This resource provides insights into how rainfall patterns are crucial to agricultural practices and food security.</li>
-                </ul>
-                <li>
-                    <strong>Rain and Crop Yields:</strong>  
-                    Rainfall is crucial for crop growth, but excessive rainfall or drought can negatively affect crop yields. Learn more about the impact of climate and rainfall on agriculture in this detailed analysis.
-                    <br><em>Source:</em> <a href="https://ourworldindata.org/crop-yields-climate-impact" target="_blank">Our World in Data</a>
-                </li>
-                <li>
-                    <strong>Raindrops Aren't Actually Tear-Shaped:</strong>  
-                    Contrary to popular belief, raindrops are not tear-shaped. They start off round but flatten as they fall through the air.
-                    <br><em>Source:</em> <a href="https://www.nationalgeographic.com/science/" target="_blank">National Geographic</a>
-                </li>
-                <li>
-                    <strong>The Wettest Place on Earth:</strong>  
-                    Mawsynram, India, receives the most rainfall in the world, with an average of 467 inches annually.
-                    <br><em>Source:</em> <a href="https://www.bbc.com/news/world-asia-36887231" target="_blank">BBC News</a>
-                </li>
-                    <li>
-                    <strong>Rain Makes the Air Smell Fresh:</strong>  
-                    After it rains, you can often smell a fresh, earthy scent called petrichor, which comes from plant oils and soil bacteria.
-                    <br><em>Source:</em> <a href="https://www.sciencedirect.com/topics/earth-and-planetary-sciences/petrichor" target="_blank">ScienceDirect</a>
-                </li>
-                <li>
-                    <strong>Clouds Can Carry Millions of Gallons of Water:</strong>  
-                    A typical cloud can carry millions of gallons of water, enough to fill thousands of swimming pools.
-                    <br><em>Source:</em> <a href="https://earthobservatory.nasa.gov/" target="_blank">NASA Earth Observatory</a>
-                </li>
-                <li>
-                    <strong>Rainbows Happen Only When It Rains:</strong>  
-                    A rainbow forms when sunlight is refracted and reflected inside rain droplets, creating a spectrum of light.
-                    <br><em>Source:</em> <a href="https://www.weather.gov/" target="_blank">National Weather Service</a>
-                </li>
-                <li>
-                    <strong>The Heaviest Rain Ever Recorded in a Minute:</strong>  
-                    In 1979, a rainstorm in the USA dropped 1.46 inches of rain in just one minute, setting a world record.
-                    <br><em>Source:</em> <a href="https://www.guinnessworldrecords.com/" target="_blank">Guinness World Records</a>
-                </li>
-                <li>
-                    <strong>Rain Can Be Different Colors:</strong>  
-                    Sometimes rain can turn yellow or red due to pollen, dust, or pollutants mixing with the rain.
-                    <br><em>Source:</em> <a href="https://theconversation.com/" target="_blank">The Conversation</a>
-                </li>
-                <li>
-                    <strong>"Raining Cats and Dogs" Is a Real Phenomenon:</strong>  
-                    The phrase "raining cats and dogs" might have originated from the 17th century when heavy rain caused dead animals to appear in the streets.
-                    <br><em>Source:</em> <a href="https://www.phrases.org.uk/" target="_blank">The Phrase Finder</a>
-                </li>
-                <li>
-                    <strong>The First Rainfall on Mars:</strong>  
-                    Recent findings show evidence of ancient rain on Mars, suggesting it once had conditions similar to Earth’s.
-                    <br><em>Source:</em> <a href="https://mars.nasa.gov/" target="_blank">NASA</a>
-                </li>
-                <li>
-                    <strong>Raindrops Can Fall at Different Speeds:</strong>  
-                    The speed at which raindrops fall can vary, with some falling as fast as 20 miles per hour, depending on their size.
-                    <br><em>Source:</em> <a href="https://www.livescience.com/" target="_blank">Live Science</a>
-                </li>
-                </ul>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 The Anatomy of Rain | All Rights Reserved</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-</body>
-</html>
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h2 {
+    color: #0f3460;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('images/rain-hero-image.jpg'); /* Replace 'your-image-file.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent overlay for better text readability */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-image h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.hero-image p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.nav-btn:hover {
+    background: #16213e;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Interactive Placeholder */
+.interactive-placeholder {
+    background-color: #ecf0f1;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* For centering an image horizontally and vertically */
+.center-image {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+    height: 100%;              /* Full height of the container */
+    width: 100%;               /* Full width of the container */
+}
+
+/* Optional: Style the image itself */
+.center-image img {
+    max-width: 100%;           /* Ensures image is responsive */
+    max-height: 100%;          /* Ensures image stays within bounds */
+    object-fit: contain;       /* Ensures image doesn't get distorted */
+}
+
+/* Style for the interactive section */
+#interactiveElement {
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Style for the slider container */
+.slider-container {
+    margin: 10px 0;
+}
+
+input[type="range"] {
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for the output section */
+.output {
+    margin-top: 20px;
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Interactive Section */
+.animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: auto;
+    background-color: #87CEEB;
+    border: 1px solid #000;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header {
+        height: 250px;
+    }
+
+    .hero-image h1 {
+        font-size: 2em;
+    }
+
+    .hero-image p {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .animation-container {
+        max-width: 100%;
+        border: none;
+    }
+
+    svg {
+        max-height: 300px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    #button-container {
+        flex-direction: column;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    svg {
+        max-height: 250px;
+    }
+}
+
+.infographic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.infographic-container img {
+    width: 100%; /* Makes the image take up 100% of the container's width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 800px; /* Optional: Limits the image width to a max of 800px */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Timeline Styles */
+.timeline {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    background-color: #f0f0f0;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #888;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.timeline-item p {
+    color: #555;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+#rain-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Raindrop Styling */
+.raindrop {
+    position: fixed; /* Fixed to the viewport */
+    top: -10px; /* Start slightly above the viewport */
+    width: 2px;
+    height: 10px;
+    background: #3498db;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+#controls {
+        position: relative; /* Keeps the controls fixed within the section while scrolling */
+        top: 10px; /* Distance from the top of the viewport */
+        z-index: 10; /* Ensures it stays above other elements */
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers controls horizontally */
+        justify-content: center; /* Centers the content vertically */
+        gap: 10px; /* Adds space between controls */
+        font-family: Arial, sans-serif;
+        max-width: 500px; /* Limits the width for better layout */
+        margin: 0 auto; /* Centers the controls horizontally */
+    }
+
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Media Queries for smaller screens (mobile devices and tablets) */
+@media (max-width: 768px) {
+    header {
+        height: 250px; /* Adjust header height for smaller screens */
+    }
+
+    .hero-image h1 {
+        font-size: 2em; /* Smaller font size */
+    }
+
+    .hero-image p {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center; /* Stack navigation items vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Make interactive elements more touch-friendly */
+    button, input[type="range"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #interactive {
+        position: relative; /* Establishes a positioning context for child elements */
+        display: flex; /* Flexbox to center child elements */
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Vertically center the content */
+        align-items: center; /* Horizontally center the content */
+        text-align: center; /* Ensures the text is centered within the container */
+        padding: 20px; /* Adds padding around the section */
+        min-height: 400px; /* Ensures section height is at least 400px */
+    }
+
+    #controls {
+        position: sticky; /* Keeps the controls fixed within the section while scrolling */
+        top: 10px; /* Distance from the top of the viewport */
+        z-index: 10; /* Ensures it stays above other elements */
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers controls horizontally */
+        justify-content: center; /* Centers the content vertically */
+        gap: 10px; /* Adds space between controls */
+        font-family: Arial, sans-serif;
+        max-width: 500px; /* Limits the width for better layout */
+        margin: 0 auto; /* Centers the controls horizontally */
+    }
+
+    .center-image img {
+        max-width: 100%; /* Ensure images are fully responsive */
+        max-height: 100%;
+    }
+
+    .slider-container {
+        margin: 10px 0;
+        width: 100%; /* Full width for sliders */
+    }
+}
+
+/* For very small devices (phones) */
+@media (max-width: 480px) {
+    header {
+        height: 200px; /* Further adjust header height for phones */
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .timeline-container {
+        margin: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 20px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
