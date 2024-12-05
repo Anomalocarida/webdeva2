@@ -46,93 +46,40 @@ header {
 
 /* Navigation Bar */
 nav {
-    background-color: #2c3e50;
+    background-color: #2c3e50; /* Dark background for the nav */
     color: white;
     padding: 15px 0;
     text-align: center;
 }
 
+/* Style for the navigation list */
 nav ul {
-    list-style-type: none;
+    list-style: none; /* Remove bullet points */
     padding: 0;
+    margin: 0;
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center the items horizontally */
 }
 
+/* Style for each list item */
 nav ul li {
-    display: inline;
-    margin: 0 20px;
+    margin: 0 15px; /* Add space between items */
 }
 
+/* Style for the links inside the list items */
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-size: 1.2em; /* Text size */
+    padding: 10px 15px; /* Padding for clickable area */
+    display: block; /* Make the link take the full width of the li */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
+/* Hover effect for the links */
 nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Hamburger menu styles */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-/* Mobile navigation styles */
-.mobile-nav {
-    display: none;
-    background-color: #2c3e50;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.mobile-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-.mobile-nav ul li {
-    margin: 15px 0;
-}
-
-.mobile-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-.mobile-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Show hamburger and mobile menu in small screens */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    nav ul {
-        display: none;
-    }
-
-    .mobile-nav.active {
-        display: block;
-    }
+    background-color: #3498db; /* Blue background on hover */
+    border-radius: 5px; /* Optional: rounded corners for hover effect */
 }
 
 
