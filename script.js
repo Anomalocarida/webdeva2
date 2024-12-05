@@ -308,11 +308,11 @@ intensitySlider.addEventListener("input", () => {
 // Stop rain on page load
 stopRain();
 
-const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('hamburger');
     const navbar = document.getElementById('navbar');
 
-    // Toggle visibility of the navbar when the hamburger is clicked
+    // Toggle menu visibility on hamburger click
     hamburger.addEventListener('click', function () {
-        navbar.classList.toggle('active'); // Add/remove the 'active' class
+        navbar.classList.toggle('active'); // Add or remove the active class
     });
 });
