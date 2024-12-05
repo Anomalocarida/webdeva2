@@ -50,50 +50,39 @@ nav {
     color: white;
     padding: 15px 0;
     text-align: center;
-    position: relative; /* Added to position the hamburger menu */
 }
 
-/* Style the unordered list */
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-/* Style the list items for desktop */
 nav ul li {
     display: inline;
     margin: 0 20px;
 }
 
-/* Style links */
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
 }
 
-/* Hover effect for links */
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Hamburger Menu */
-#hamburger-menu {
-    display: none; /* Hidden by default */
-    flex-direction: column;
+/* Hamburger menu styles */
+#mobile-menu {
+    display: none;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    font-size: 1.5em;
+    color: white;
 }
 
-/* Hamburger Menu Bars */
-#hamburger-menu span {
-    background-color: white;
-    height: 4px;
-    width: 30px;
-    margin: 4px 0;
+nav ul.active {
+    display: block;
+    text-align: center;
 }
 
 /* Section Styles */
