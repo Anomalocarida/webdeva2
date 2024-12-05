@@ -44,61 +44,78 @@ header {
     margin-top: 10px;
 }
 
-/* General styles for navbar */
+/* Default Navbar Styling */
 #navbar {
-    display: none; /* Initially hide the navbar */
-    position: absolute; /* Overlay for the menu */
-    top: 50px;
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 60px;
     right: 0;
     background-color: #333;
-    width: 200px;
-    border-radius: 5px;
+    color: white;
+    width: 250px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 1000;
+    border-radius: 5px;
 }
 
-/* Menu items */
+/* Navbar Items */
 #navbar ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 #navbar ul li {
-    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+#navbar ul li:last-child {
+    border-bottom: none;
 }
 
 #navbar ul li a {
     text-decoration: none;
     color: white;
-    padding: 10px;
+    font-size: 16px;
     display: block;
-    text-align: left;
 }
 
-/* Hamburger menu */
+/* Hamburger Button */
 .hamburger {
     font-size: 30px;
     background: none;
     border: none;
     cursor: pointer;
+    color: white;
     position: fixed;
     top: 10px;
     right: 10px;
     z-index: 1001;
-    color: white;
 }
 
-/* When the 'active' class is added, show the navbar */
+/* Show Navbar when 'active' class is added */
 #navbar.active {
     display: block;
 }
 
-/* Ensure layout consistency on larger screens */
+/* Responsive Design: Desktop */
 @media (min-width: 768px) {
     #navbar {
-        width: 250px; /* Larger width for desktop */
+        display: none; /* Default to hidden */
+        width: 250px;
+    }
+
+    #navbar.active {
+        display: block;
+    }
+
+    .hamburger {
+        display: block; /* Keep hamburger on desktop */
     }
 }
+
 
 
 /* Section Styles */
