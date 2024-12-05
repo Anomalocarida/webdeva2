@@ -308,8 +308,6 @@ intensitySlider.addEventListener("input", () => {
 // Stop rain on page load
 stopRain();
 
-// Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
 
@@ -317,4 +315,5 @@ document.addEventListener('DOMContentLoaded', function () {
         navList.classList.toggle('active');
     });
 });
+
 
