@@ -1,317 +1,502 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Existing cloud formation and slider handling code
-    const tempSlider = document.getElementById('temperature');
-    const humiditySlider = document.getElementById('humidity');
-    const pressureSlider = document.getElementById('pressure');
-    
-    const tempValueDisplay = document.getElementById('tempValue');
-    const humidityValueDisplay = document.getElementById('humidityValue');
-    const pressureValueDisplay = document.getElementById('pressureValue');
-    const cloudPreview = document.getElementById('cloudPreview');
-    
-    function updateSliderValues() {
-        tempValueDisplay.textContent = tempSlider.value;
-        humidityValueDisplay.textContent = humiditySlider.value;
-        pressureValueDisplay.textContent = pressureSlider.value;
-    }
-    
-    function updateCloudPreview() {
-        const temperature = parseInt(tempSlider.value);
-        const humidity = parseInt(humiditySlider.value);
-        const pressure = parseInt(pressureSlider.value);
-        
-        if (temperature > 30 && humidity > 70 && pressure < 1000) {
-            cloudPreview.textContent = 'High temperature, high humidity, and low pressure: Likely to form large clouds and rain.';
-        } else if (temperature < 30 && humidity > 49 && pressure > 1010) {
-            cloudPreview.textContent = 'Cool temperature, moderate humidity, and high pressure: Likely to form light clouds.';
-        } else if (temperature > 25 && humidity > 60 && pressure < 1000) {
-            cloudPreview.textContent = 'Warm temperature, high humidity, and low pressure: Likely to form thunderstorms.';
-        } else {
-            cloudPreview.textContent = 'Adjust the sliders to simulate cloud formation and rain likelihood.';
-        }
-    }
-    
-    tempSlider.addEventListener('input', function () {
-        updateSliderValues();
-        updateCloudPreview();
-    });
-    
-    humiditySlider.addEventListener('input', function () {
-        updateSliderValues();
-        updateCloudPreview();
-    });
-    
-    pressureSlider.addEventListener('input', function () {
-        updateSliderValues();
-        updateCloudPreview();
-    });
-    
-    updateSliderValues();
-    updateCloudPreview();
-    
-    // Raindrop Animation for Impact Section
-    const startRainButton = document.getElementById('start-rain');
-    const resetButton = document.getElementById('reset');
-    const raindrop = document.getElementById('rain-drop');
-    let rainInterval;
-    let floodInterval;
-    let isAnimating = false; // Track if animation is running
-
-    // Animation control function
-    function startRainAnimation() {
-        if (isAnimating) return; // Prevent multiple simultaneous animations
-        isAnimating = true;
-
-        // Disable button to prevent multiple triggers
-        startRainButton.disabled = true;
-
-        // Initialize raindrop's position and size
-        let dropRadius = 0;
-        let dropY = 50;
-
-        // Reset the raindrop size and position
-        raindrop.setAttribute('r', dropRadius);
-        raindrop.setAttribute('cy', dropY);
-
-        // Animation interval
-        rainInterval = setInterval(() => {
-            // Increase size and move down
-            dropRadius += 1; // Raindrop grows
-            dropY += 10; // Raindrop falls
-
-            // Update the SVG attributes
-            raindrop.setAttribute('r', dropRadius);
-            raindrop.setAttribute('cy', dropY);
-
-            // Stop animation when the raindrop hits the ground
-            if (dropY >= 300) {
-                clearInterval(rainInterval);
-
-                // Trigger flood animation after rain hits ground
-                startFloodAnimation();
-            }
-        }, 80); // Adjust the speed of animation (80ms per frame)
-    }
-
-    // Flood Animation
-    const floodPath = document.getElementById('flood-path');
-    const animationContainer = document.getElementById('animation-container');
-    let waterLevel = 350;
-    let floodHeight = 0;
-
-    function startFloodAnimation() {
-        // Reset flood values
-        waterLevel = 350;
-        floodHeight = 0;
-
-        floodInterval = setInterval(() => {
-            floodHeight += 2; // Flood rises
-            waterLevel -= 2;
-            floodPath.setAttribute(
-                'd',
-                `M0,${waterLevel} C200,${waterLevel - 50} 600,${waterLevel - 50} 800,${waterLevel}`
-            );
-
-            // Change background dynamically
-            const floodProgress = floodHeight / 50; // Adjust scale for visualization
-            const redValue = Math.min(255, floodProgress * 255);
-            const blueValue = Math.max(50, 255 - floodProgress * 200);
-            animationContainer.style.backgroundColor = `rgb(${redValue}, 50, ${blueValue})`;
-
-            if (floodHeight >= 50) {
-                clearInterval(floodInterval);
-
-                // Restart rain animation after flood completes
-                setTimeout(() => {
-                    if (isAnimating) { // Check if animation is still ongoing
-                        startRainAnimation();
-                    }
-                }, 500); // Delay to allow flood animation to finish before restarting rain
-            }
-        }, 100);
-    }
-
-    // Reset Animation
-    resetButton.addEventListener('click', function () {
-        clearInterval(rainInterval);
-        clearInterval(floodInterval);
-        raindrop.setAttribute('r', 0);
-        raindrop.setAttribute('cy', 50);
-        startRainButton.disabled = false;
-        animationContainer.style.backgroundColor = 'rgb(0, 50, 255)';
-        floodPath.setAttribute('d', 'M0,350 C200,350 600,350 800,350');
-        isAnimating = false;
-    });
-
-    // Start the rain animation when button is clicked
-    startRainButton.addEventListener('click', startRainAnimation);
-});
-
-// Bar Chart: Rainfall Impact on Crops
-document.addEventListener('DOMContentLoaded', function () {
-    const barChartCanvas = document.getElementById('bar-chart');
-    const barChartContext = barChartCanvas.getContext('2d');
-
-    const rainfallData = {
-        labels: ['Light Rain', 'Moderate Rain', 'Heavy Rain'],
-        datasets: [
-            {
-                label: 'Wheat',
-                data: [10, 25, 35],
-                backgroundColor: 'rgba(255, 99, 132, 0.6)',
-            },
-            {
-                label: 'Corn',
-                data: [15, 30, 40],
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
-            },
-            {
-                label: 'Rice',
-                data: [20, 35, 50],
-                backgroundColor: 'rgba(75, 192, 192, 0.6)',
-            },
-        ],
-    };
-
-    const barChartOptions = {
-        responsive: true,
-        scales: {
-            x: {
-                stacked: true,
-            },
-            y: {
-                stacked: true,
-                beginAtZero: true,
-            },
-        },
-    };
-
-    new Chart(barChartContext, {
-        type: 'bar',
-        data: rainfallData,
-        options: barChartOptions,
-    });
-});
-
-// Prevent form submission from reloading the page
-    document.getElementById("health-risk-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        // Get the form input values
-        let rainfall = parseFloat(document.getElementById("rainfall").value);
-        let location = document.getElementById("location").value;
-        let duration = parseFloat(document.getElementById("duration").value);
-
-        // Variable to store health risk and message
-        let healthRisk = 0;
-        let riskMessage = "";
-
-        // Calculate health risk based on rainfall and duration
-        if (rainfall >= 50 && duration >= 2) {
-            healthRisk = 80;  // High risk
-            riskMessage = "High health risk due to prolonged heavy rainfall.";
-        } else if (rainfall >= 30 && duration >= 1) {
-            healthRisk = 50;  // Moderate risk
-            riskMessage = "Moderate health risk due to rainfall.";
-        } else {
-            healthRisk = 20;  // Low risk
-            riskMessage = "Low health risk, rainfall is moderate.";
-        }
-
-        // Display the health risk result
-        document.getElementById("health-risk-result").innerHTML = `
-            <strong>Risk Level:</strong> ${riskMessage} <br>
-            <strong>Risk Score:</strong> ${healthRisk}%
-        `;
-    });
-
-    // Function to show artwork modal
-function showArtwork(artworkId) {
-    document.getElementById(artworkId).style.display = "block";
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-// Function to close artwork modal
-function closeModal(artworkId) {
-    document.getElementById(artworkId).style.display = "none";
+h2 {
+    color: #0f3460;
 }
 
-// Close modal if user clicks outside of it
-window.onclick = function(event) {
-    var modals = document.getElementsByClassName("modal");
-    for (var i = 0; i < modals.length; i++) {
-        if (event.target === modals[i]) {
-            modals[i].style.display = "none";
-        }
+/* Header Styles */
+header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('images/rain-hero-image.jpg'); /* Replace 'your-image-file.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent overlay for better text readability */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-image h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.hero-image p {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Interactive Placeholder */
+.interactive-placeholder {
+    background-color: #ecf0f1;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* For centering an image horizontally and vertically */
+.center-image {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+    height: 100%;              /* Full height of the container */
+    width: 100%;               /* Full width of the container */
+}
+
+/* Optional: Style the image itself */
+.center-image img {
+    max-width: 100%;           /* Ensures image is responsive */
+    max-height: 100%;          /* Ensures image stays within bounds */
+    object-fit: contain;       /* Ensures image doesn't get distorted */
+}
+
+/* Style for the interactive section */
+#interactiveElement {
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Style for the slider container */
+.slider-container {
+    margin: 10px 0;
+}
+
+input[type="range"] {
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for the output section */
+.output {
+    margin-top: 20px;
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Interactive Section */
+.animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: auto;
+    background-color: #87CEEB;
+    border: 1px solid #000;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    header {
+        height: 250px;
+    }
+
+    .hero-image h1 {
+        font-size: 2em;
+    }
+
+    .hero-image p {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .animation-container {
+        max-width: 100%;
+        border: none;
+    }
+
+    svg {
+        max-height: 300px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
     }
 }
 
-const rainContainer = document.getElementById("rain-container");
-const intensitySlider = document.getElementById("intensity");
-const toggleRainButton = document.getElementById("toggle-rain");
-const colorPicker = document.getElementById("color");
-
-let rainInterval;
-let isRaining = false;
-
-// Function to create a single raindrop
-function createRaindrop() {
-    const raindrop = document.createElement("div");
-    raindrop.classList.add("raindrop");
-
-    // Randomize position and animation duration
-    const startX = Math.random() * window.innerWidth;
-    const duration = Math.random() * 3 + 2; // 2 to 5 seconds
-
-    raindrop.style.left = `${startX}px`;
-    raindrop.style.animationDuration = `${duration}s`;
-    raindrop.style.backgroundColor = colorPicker.value; // Apply selected color
-
-    rainContainer.appendChild(raindrop);
-
-    // Remove raindrop after animation ends
-    setTimeout(() => {
-        raindrop.remove();
-    }, duration * 1000);
-}
-
-// Function to start generating raindrops
-function startRain() {
-    const interval = 600 - intensitySlider.value; // Invert intensity relationship
-    rainInterval = setInterval(createRaindrop, interval);
-}
-
-// Function to stop generating raindrops
-function stopRain() {
-    clearInterval(rainInterval);
-}
-
-// Toggle rain on button click
-toggleRainButton.addEventListener("click", () => {
-    if (isRaining) {
-        stopRain();
-        toggleRainButton.textContent = "Start Rain";
-    } else {
-        startRain();
-        toggleRainButton.textContent = "Stop Rain";
+@media (max-width: 480px) {
+    header {
+        height: 200px;
     }
-    isRaining = !isRaining;
-});
 
-// Adjust rain intensity based on slider value
-intensitySlider.addEventListener("input", () => {
-    if (isRaining) {
-        stopRain();
-        startRain();
+    h2 {
+        font-size: 1.5em;
     }
-});
 
-// Stop rain on page load
-stopRain();
+    #button-container {
+        flex-direction: column;
+    }
 
-    const hamburger = document.getElementById('hamburger');
-      const mobileNav = document.getElementById('mobile-nav');
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
 
-      hamburger.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
-    });
-});
+    svg {
+        max-height: 250px;
+    }
+}
+
+.infographic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.infographic-container img {
+    width: 100%; /* Makes the image take up 100% of the container's width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 800px; /* Optional: Limits the image width to a max of 800px */
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Timeline Styles */
+.timeline {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    background-color: #f0f0f0;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #888;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.timeline-item p {
+    color: #555;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+#rain-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Raindrop Styling */
+.raindrop {
+    position: fixed; /* Fixed to the viewport */
+    top: -10px; /* Start slightly above the viewport */
+    width: 2px;
+    height: 10px;
+    background: #3498db;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+#controls {
+        position: relative; /* Keeps the controls fixed within the section while scrolling */
+        top: 10px; /* Distance from the top of the viewport */
+        z-index: 10; /* Ensures it stays above other elements */
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers controls horizontally */
+        justify-content: center; /* Centers the content vertically */
+        gap: 10px; /* Adds space between controls */
+        font-family: Arial, sans-serif;
+        max-width: 500px; /* Limits the width for better layout */
+        margin: 0 auto; /* Centers the controls horizontally */
+    }
+
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Media Queries for smaller screens (mobile devices and tablets) */
+@media (max-width: 768px) {
+    header {
+        height: 250px; /* Adjust header height for smaller screens */
+    }
+
+    .hero-image h1 {
+        font-size: 2em; /* Smaller font size */
+    }
+
+    .hero-image p {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center; /* Stack navigation items vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Make interactive elements more touch-friendly */
+    button, input[type="range"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #interactive {
+        position: relative; /* Establishes a positioning context for child elements */
+        display: flex; /* Flexbox to center child elements */
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center; /* Vertically center the content */
+        align-items: center; /* Horizontally center the content */
+        text-align: center; /* Ensures the text is centered within the container */
+        padding: 20px; /* Adds padding around the section */
+        min-height: 400px; /* Ensures section height is at least 400px */
+    }
+
+    #controls {
+        position: sticky; /* Keeps the controls fixed within the section while scrolling */
+        top: 10px; /* Distance from the top of the viewport */
+        z-index: 10; /* Ensures it stays above other elements */
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a floating effect */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers controls horizontally */
+        justify-content: center; /* Centers the content vertically */
+        gap: 10px; /* Adds space between controls */
+        font-family: Arial, sans-serif;
+        max-width: 500px; /* Limits the width for better layout */
+        margin: 0 auto; /* Centers the controls horizontally */
+    }
+
+    .center-image img {
+        max-width: 100%; /* Ensure images are fully responsive */
+        max-height: 100%;
+    }
+
+    .slider-container {
+        margin: 10px 0;
+        width: 100%; /* Full width for sliders */
+    }
+}
+
+/* For very small devices (phones) */
+@media (max-width: 480px) {
+    header {
+        height: 200px; /* Further adjust header height for phones */
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .timeline-container {
+        margin: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 20px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
