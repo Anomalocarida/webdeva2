@@ -44,78 +44,96 @@ header {
     margin-top: 10px;
 }
 
-/* Default Navbar Styling */
-#navbar {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 60px;
-    right: 0;
-    background-color: #333;
+/* Navigation Bar */
+nav {
+    background-color: #2c3e50;
     color: white;
-    width: 250px;
-    height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background-color: white;
     border-radius: 5px;
 }
 
-/* Navbar Items */
-#navbar ul {
-    list-style: none;
+/* Mobile navigation styles */
+.mobile-nav {
+    display: none;
+    background-color: #2c3e50;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.mobile-nav ul {
+    list-style-type: none;
     padding: 0;
-    margin: 0;
+    text-align: center;
 }
 
-#navbar ul li {
-    padding: 10px;
-    border-bottom: 1px solid #444;
+.mobile-nav ul li {
+    margin: 15px 0;
 }
 
-#navbar ul li:last-child {
-    border-bottom: none;
-}
-
-#navbar ul li a {
+.mobile-nav ul li a {
+    color: white;
     text-decoration: none;
-    color: white;
-    font-size: 16px;
-    display: block;
+    font-size: 1.5em;
 }
 
-/* Hamburger Button */
-.hamburger {
-    font-size: 30px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1001;
+.mobile-nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Show Navbar when 'active' class is added */
-#navbar.active {
-    display: block;
-}
-
-/* Responsive Design: Desktop */
-@media (min-width: 768px) {
-    #navbar {
-        display: none; /* Default to hidden */
-        width: 250px;
+/* Show hamburger and mobile menu in small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
     }
 
-    #navbar.active {
+    nav ul {
+        display: none;
+    }
+
+    .mobile-nav.active {
         display: block;
     }
-
-    .hamburger {
-        display: block; /* Keep hamburger on desktop */
-    }
 }
-
 
 
 /* Section Styles */
