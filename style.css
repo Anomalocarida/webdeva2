@@ -46,8 +46,7 @@ header {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
-  color: white;
+  background-color: #f4f4f4;
 }
 
 .topnav a {
