@@ -304,14 +304,3 @@ intensitySlider.addEventListener("input", () => {
         startRain();
     }
 });
-
-// Stop rain on page load
-stopRain();
-
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const navList = document.querySelector('nav ul');
-
-    hamburgerMenu.addEventListener('click', function () {
-        navList.classList.toggle('active');
-    });
-});
