@@ -71,10 +71,9 @@ header {
 
 .topnav .icon {
   display: none;
-  color: green;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -82,7 +81,7 @@ header {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
