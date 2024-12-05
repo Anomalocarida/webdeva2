@@ -72,17 +72,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Show the navbar on larger screens */
-@media (min-width: 769px) {
-    #navbar {
-        display: block; /* Always show the menu on desktops */
-    }
-
-    .hamburger {
-        display: none; /* Hide the hamburger menu on desktops */
-    }
-}
-
 /* Section Styles */
 section {
     padding: 50px 20px;
@@ -490,7 +479,8 @@ footer {
 
 /* By default, hide the navigation bar on small screens */
 #navbar {
-    display: none; /* Hide menu */
+    display: none; /* Hide menu by default */
+    background-color: #333; /* Optional: background color when menu is active */
 }
 
 .hamburger {
@@ -498,29 +488,44 @@ footer {
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 1000; /* Ensure the hamburger icon is clickable */
 }
 
 /* When 'active' class is added, display the navbar */
 #navbar.active {
-    display: block;
-    background-color: #333; /* Optional: adds background color when visible */
+    display: block; /* Show the menu when active class is added */
 }
 
-#navbar ul {
-    list-style-type: none;
-    padding: 0;
+/* Add styles for mobile menu */
+@media (max-width: 768px) {
+    #navbar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #navbar ul li {
+        margin: 10px 0;
+    }
+
+    #navbar ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        display: block;
+    }
 }
 
-#navbar ul li {
-    margin: 10px 0;
+/* Show the navbar on larger screens */
+@media (min-width: 769px) {
+    #navbar {
+        display: block; /* Always show the menu on desktops */
+    }
+
+    .hamburger {
+        display: none; /* Hide the hamburger menu on desktops */
+    }
 }
 
-#navbar ul li a {
-    text-decoration: none;
-    color: white; /* Change to your desired color */
-    padding: 10px;
-    display: block;
-}
 
 
 /* For very small devices (phones) */
