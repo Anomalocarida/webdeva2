@@ -500,3 +500,53 @@ footer {
         font-size: 1em;
     }
 }
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+nav ul {
+    display: flex; /* Default horizontal layout for desktop */
+}
+
+@media (max-width: 768px) {
+    /* Show hamburger icon on small screens */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav ul {
+        display: none; /* Hide the menu by default on small screens */
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center;
+        width: 100%; /* Full width for mobile */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    /* Add a class to show the menu when the hamburger is clicked */
+    nav.active ul {
+        display: flex;
+    }
+}
+
