@@ -312,8 +312,8 @@ stopRain();
 const hamburger = document.getElementById('hamburger');
     const navbar = document.getElementById('navbar');
 
-    // Toggle the 'active' class on the navbar when the hamburger is clicked
+    // Add a click event listener to the hamburger button
     hamburger.addEventListener('click', function () {
-        navbar.classList.toggle('active');
+        navbar.classList.toggle('active'); // Toggle the 'active' class
     });
 });
