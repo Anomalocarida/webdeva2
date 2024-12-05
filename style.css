@@ -72,6 +72,17 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Show the navbar on larger screens */
+@media (min-width: 769px) {
+    #navbar {
+        display: block; /* Always show the menu on desktops */
+    }
+
+    .hamburger {
+        display: none; /* Hide the hamburger menu on desktops */
+    }
+}
+
 /* Section Styles */
 section {
     padding: 50px 20px;
